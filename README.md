@@ -11,7 +11,7 @@
 
 6/27/2023
 - 
-- collection if/for : using loop, of if to add variable into a list 
+- collection if/for : using loop, of if to add/update variable into a list
 - set vs list : list keeps all values even values are same, set's values have to be unique
 
 6/28/2023
