@@ -20,6 +20,8 @@
   생성자처럼 번수를 주지 않았을 경우에도 default로 값을 지정해줄 수 있다.
 
 - left ?? right. 
-  - if (left==!null) => left
-  - if (left==null) => right
+  - (left==!null)? left : right
  
+6/29/2023
+- 
+- 
