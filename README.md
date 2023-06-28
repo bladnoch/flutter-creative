@@ -16,4 +16,10 @@
 
 6/28/2023
 - 
-- 
+- named function은 parameter에 중괄호를 쳐준다 그럴경우 순서에 상관없이 map처럼 파라미터 이름과 value를 추가한다.
+  생성자처럼 번수를 주지 않았을 경우에도 default로 값을 지정해줄 수 있다.
+
+- left ?? right. 
+  - if (left==!null) => left
+  - if (left==null) => right
+ 
