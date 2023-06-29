@@ -24,4 +24,11 @@
  
 6/29/2023
 - 
+- Student std=new Student();
+- var std=Student;
+- extends 대신 with로 변수나 메소드 사용 가능
+- Player.info()형식으로 생성자 사용, 초기화 가능
+
+6/30/2023
 - 
+-
