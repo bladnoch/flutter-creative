@@ -1,13 +1,132 @@
 import 'package:collection/collection.dart';
 
-Map<String, int > dir={
-  "1":1,
-  "2":2,
-  "4":7,
-  "3":3,
-};
+enum Team {Wolves,Eagels,red,blue,wolves,Thunders,thunders}
+
+class Player extends Human{
+  String name;
+  int age, xp;
+  Team team;
+
+
+  Player({
+    required this.name,
+    required this.age,
+    required this.team,
+    required this.xp}){
+    Hello();
+  }
+
+  Player.wolves({
+    required String name,
+    required int age,})
+      :
+        this.name=name,
+        this.age=age,
+        this.team=Team.Wolves,
+        this.xp=0;
+
+  Player.thunders({
+    required String name,
+    required int age,})
+      : this.name=name,
+        this.age=age,
+        this.team=Team.Thunders,
+        this.xp=0;
+
+
+  Player.fromJason(Map<String, dynamic> playerJson)
+      :
+        name=playerJson["name"],
+        xp=playerJson["xp"],
+        team=playerJson["team"],
+        age=0;
+
+  void Hello(){
+    print("Hi my name is $name");
+    // print("I am $age");
+    print("My team is $team I got $xp xp");
+  }
+
+  @override
+  void walk() {
+    print("$name is walking");
+  }
+
+}
+
+class Teams{
+
+}
+
+abstract class Human{
+  void walk();
+}
 
 void main(){
+  var dk=Player(name: "dounguk", age: 28, team: Team.Wolves, xp: 1200)
+    ..name="dk"
+    ..age=23
+    ..xp=150000
+    ..team=Team.Eagels
+    ..Hello()
+    ..walk();
+
+
+  var apiData=[
+    {
+      "name":"Daniel",
+      "team":Team.Thunders,
+      "xp":0,
+    },
+    {
+      "name":"nico",
+      "team":Team.red,
+      "xp":1200,
+    },
+    {
+      "name":"Dounguk",
+      "team":Team.Wolves,
+      "xp":1400,
+    },
+  ];
+
+  apiData.forEach((playerJson) {
+    var player=Player.fromJason(playerJson);
+    player.Hello();
+  });
+
+
+
+
+  var canBeAll=Player.wolves(
+      name:"Dounguk",
+      age:28,
+  );
+  // canBeAll.Hello();
+  // print("");
+  var canBeAll2=Player.thunders(
+      name:"Daniel",
+      age:15,
+
+  );
+  // canBeAll2.Hello();
+
+
+
+
+}
+
+
+
+
+
+void etc(){
+  Map<String, int > dir={
+    "1":1,
+    "2":2,
+    "4":7,
+    "3":3,
+  };
   String name="nasd";
   bool td=true;
   double db=23.1244;
