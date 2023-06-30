@@ -31,4 +31,5 @@
 
 6/30/2023
 - 
--
+- First code challenge
+- Challenge goals: Using everything we learned, make a Dictionary class with the following methods:
