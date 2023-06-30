@@ -2,8 +2,16 @@ typedef DicWord=List<Map<String,String>>;
 typedef Word=Map<String,String>;
 typedef StringList=List<String>;
 
+/// @DayFive.dart: Creat Dictionary class, with methods.
+/// @author Dounguk Kim
+/// @since 6/30/2023
+/// @version v0.0.1
+
+
 void main(){
-  ///vaiable
+  ///test instance for Dictionary class
+  ///below test instance, test calles all methods and print result
+  ///result: "method() : result"
   var test=Dictionary();
 
   test.add("돈", "money");
@@ -15,6 +23,7 @@ void main(){
   test.exists("계좌");
   test.get("돈");
   test.showAll();
+  test.upset("계좌", "account");
   test.count();
   test.bulkAdd([{"term":"김치", "definition":"대박이네"}, {"term": "아파트", "definition": "비싸네"}]);
   test.count();
