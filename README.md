@@ -33,3 +33,7 @@
 - 
 - First code challenge
 - Challenge goals: Using everything we learned, make a Dictionary class with the following methods:
+
+7/1/2023
+- 
+- 
