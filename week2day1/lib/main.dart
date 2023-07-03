@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+///@main.dart:
+///@author
+///@since
+///@
+
+class Player{
+  String name;
+  Player({required this.name});
 }
+
+void main() {
+  var dk=Player(
+    name:"dk",
+  );
+  runApp(MyApp());
+
+}
+
 
 class MyApp extends StatelessWidget{
 
