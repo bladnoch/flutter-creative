@@ -34,6 +34,12 @@
 - First code challenge
 - Challenge goals: Using everything we learned, make a Dictionary class with the following methods:
 
-7/1/2023
+7/3/2023
+- 
+- flutter 초기 세팅
+- 모든 flutter 요소는 material에 속해있다.
+- widget들의 조합으로 어플의 모든 기능이 구현된다.
+
+7/4/2023
 - 
 - 
