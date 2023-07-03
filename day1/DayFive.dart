@@ -58,7 +58,6 @@ class Dictionary{
     dic.remove(word);
     counter--;
     print("delete() : $word deleted");
-
   }
 
   ///사전 단어를 모두 보여줌
