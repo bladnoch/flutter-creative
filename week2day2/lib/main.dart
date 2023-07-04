@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:week_two_day_two/widgets/card.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext){
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Color(0x101820),
         body:Column(
           children: [
             SizedBox(height: 60,),
@@ -93,99 +94,28 @@ class MyApp extends StatelessWidget {
             SizedBox(height: 40,),
 
             ///cards
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.yellow,
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          /// 날짜
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Column(
-                              textDirection: TextDirection.ltr,
-                              children: [
-                                Text("11",
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text("30",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Text("|",
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                ),
-                                Text("12",
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text("20",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                /// Design Meeting
-                                Text("DESIGN",
-                                  style: TextStyle(
-                                    fontSize: 60,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+            ThreeCards(
+                date: ["11","30","12","20"],
+                topic: ["DESIGN","MEETING"],
+                people: ["alex","helena","Jack",],
+                color:Colors.yellow[400],
+            ),
+            SizedBox(height: 10,),
 
-                                  Text("MEETING",
-                                    style: TextStyle(
-                                      fontSize: 60,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                SizedBox(height: 20,),
+            ThreeCards(
+                date: ["12","35","14","10"],
+                topic: ["daily","project"],
+                people: ["me","richard","ciry","+4"],
+                color:Colors.deepPurple[400],
+            ),
+            SizedBox(height: 10,),
 
-                                Text("Alex      Helena      Nana".toUpperCase(),
-                                  style:
-                                  TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black87.withOpacity(0.6),
-                                    fontWeight: FontWeight.w600
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
+            ThreeCards(
+              date: ["15","00","16","30"],
+              topic: ["weekly","planning"],
+              people: ["den","nana","mark",],
+              color:Colors.lightGreen,
             ),
           ],
         ),
