@@ -105,69 +105,80 @@ class MyApp extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           /// 날짜
-                          Column(
-                            children: [
-                              Text("11",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w600,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: Column(
+                              textDirection: TextDirection.ltr,
+                              children: [
+                                Text("11",
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                              Text("30",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                                Text("30",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
-                              Text("|",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w300,
+                                Text("|",
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w300,
+                                  ),
                                 ),
-                              ),
-                              Text("12",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w600,
+                                Text("12",
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                              Text("20",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                                Text("20",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
 
-                          Column(
-                            children: [
-                              /// Design Meeting
-                              Text("DESIGN",
-                                style: TextStyle(
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.w600,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                /// Design Meeting
+                                Text("DESIGN",
+                                  style: TextStyle(
+                                    fontSize: 60,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              ),
-                              Text("MEETING",
-                                style: TextStyle(
-                                  fontSize: 60,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              SizedBox(height: 20,),
 
-                              Text("Alex  Helena  Nana".toUpperCase(),
-                              style:
-                                TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black87.withOpacity(0.6),
-                                  fontWeight: FontWeight.w600
+                                  Text("MEETING",
+                                    style: TextStyle(
+                                      fontSize: 60,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                SizedBox(height: 20,),
+
+                                Text("Alex      Helena      Nana".toUpperCase(),
+                                  style:
+                                  TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.black87.withOpacity(0.6),
+                                    fontWeight: FontWeight.w600
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ],
                       ),
