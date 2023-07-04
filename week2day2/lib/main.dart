@@ -10,19 +10,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.pink,
-        body: Column(
-          children: [
-            Row(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
               children: [
-                Text("data1"),
-                Text("data2",
-                  style: TextStyle(
-                    color: Colors.white70,
-                  ),
+                SizedBox(height: 80,
+                ),
+                Row(
+                  
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset("lib/photos/20230516_220315.jpg"),
+                    Text("+",
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 38,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
         ),
       ),
     );
