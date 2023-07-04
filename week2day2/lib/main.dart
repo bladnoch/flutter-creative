@@ -78,7 +78,7 @@ class MyApp extends StatelessWidget {
                         size: 15,),
 
                       ///Text : 17 18 19...
-                      Text(" 17 18 19 20 21 22 23 24 25 26 27 28 29",
+                      Text(" 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31",
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.6),
                           fontSize: 46,
@@ -92,7 +92,90 @@ class MyApp extends StatelessWidget {
             ),
             SizedBox(height: 40,),
 
+            ///cards
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                      child: Row(
+                        children: [
+                          /// 날짜
+                          Column(
+                            children: [
+                              Text("11",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text("30",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text("|",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                              Text("12",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text("20",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
 
+                          Column(
+                            children: [
+                              /// Design Meeting
+                              Text("DESIGN",
+                                style: TextStyle(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text("MEETING",
+                                style: TextStyle(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(height: 20,),
+
+                              Text("Alex  Helena  Nana".toUpperCase(),
+                              style:
+                                TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.black87.withOpacity(0.6),
+                                  fontWeight: FontWeight.w600
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
