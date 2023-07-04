@@ -9,9 +9,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext){
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Center(
-          child: Text("hello world"),
+        backgroundColor: Colors.pink,
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Text("data1"),
+                Text("data2",
+                  style: TextStyle(
+                    color: Colors.white70,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
