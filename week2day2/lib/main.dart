@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:week_two_day_two/widgets/card.dart';
 
+/// main.dart: UI Clone coding
+/// @author doungukkim
+/// @since 7/4/2023
+/// @version v0.0.1
+
 void main() {
   runApp(MyApp());
 }
@@ -10,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext){
     return MaterialApp(
       home: Scaffold(
+        ///bqckground color
         backgroundColor: Color(0x101820),
         body:Column(
           children: [
@@ -23,6 +29,7 @@ class MyApp extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
+                    ///profile image
                     child: Image.asset('assets/photos/profile.jpg',
                       width: 60,
                       height: 60,),
@@ -94,7 +101,6 @@ class MyApp extends StatelessWidget {
             SizedBox(height: 40,),
 
             ///cards
-
             ThreeCards(
                 date: ["11","30","12","20"],
                 topic: ["DESIGN","MEETING"],

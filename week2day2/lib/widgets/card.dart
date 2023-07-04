@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 
+
+/// card.dart: three button part cards
+/// @author doungukkim
+/// @since 7/4/2023
+/// @version v0.0.1
+
 class ThreeCards extends StatelessWidget{
-  // final String people;
-  final List<String> date, topic,people;
+
+  /// @topic : main topic of plan
+  /// @date : start, end date
+  /// @people : people who involved
+  /// @color : card color  ex) Colors.yellow
+
+  final List<String> date, topic, people;
   final color;
 
+  /// Constructor
+  /// get topic, date, people, color
   const ThreeCards({
     super.key,
     required this.topic,
@@ -13,6 +26,8 @@ class ThreeCards extends StatelessWidget{
     required this.color,
   });
 
+  /// peopleString() method
+  /// make single String from people list
   peopleString(people){
     var temp="";
     for(int i=0;i<people.length;i++){
@@ -20,9 +35,12 @@ class ThreeCards extends StatelessWidget{
     }
     return temp;
   }
+
+
   @override
   Widget build(BuildContext context) {
 
+    /// card design
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
@@ -30,6 +48,7 @@ class ThreeCards extends StatelessWidget{
           color: color,
           borderRadius: BorderRadius.circular(40),
         ),
+        ///materials in card
         child: Row(
           children: [
             Padding(
@@ -44,12 +63,15 @@ class ThreeCards extends StatelessWidget{
                     child: Column(
                       textDirection: TextDirection.ltr,
                       children: [
+
+                        ///starting month
                         Text(date[0],
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+                        ///starting date
                         Text(date[1],
                           style: const TextStyle(
                             fontSize: 18,
@@ -62,12 +84,14 @@ class ThreeCards extends StatelessWidget{
                             fontWeight: FontWeight.w300,
                           ),
                         ),
+                        ///end month
                         Text(date[2],
                           style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+                        ///end date
                         Text(date[3],
                           style: const TextStyle(
                             fontSize: 18,
@@ -99,7 +123,7 @@ class ThreeCards extends StatelessWidget{
                         ),
                         const SizedBox(height: 20,),
 
-                        Text(peopleString(people).toUpperCase(),
+                        Text(peopleString(people).toUpperCase(), //uppercase
                           style:
                           TextStyle(
                               fontSize: 18,
