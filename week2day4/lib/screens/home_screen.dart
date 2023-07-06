@@ -9,9 +9,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const int restSec=6;
+  static const int restSec=300;
 
-  static const int fif=3;
+  static const int fif=900;
   static const int twen =1200;
   static const int twenFive=1500;
   static const int thir=1800;
