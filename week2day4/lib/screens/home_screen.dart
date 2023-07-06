@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:js_util';
 
 import 'package:flutter/material.dart';
 
@@ -10,22 +11,56 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  static const int restSec=500;
+
+  static const int fif=900;
+  static const int twen =1200;
+  static const int twenFive=1500;
+  static const int thir=1800;
+  static const int thirFive=2100;
+
+  bool firstStart=true;
+  late int tempSec;
   int totalSeconds=1500;
   bool isRunning = false;
   int round=0;
   int goal=0;
   late Timer timer;
 
+  List<String> format(int seconds){
+    var duration=Duration(seconds: seconds);
+    List<String> minSec= [duration.toString().split(".").first.substring(2,4),duration.toString().split(".").first.substring(5,7)];
+    return minSec;
+  }
+
+  void checkRound(){
+    if(round==4){
+      totalSeconds=restSec;
+      round=0;
+      goal++;
+      setState(() {
+        totalSeconds--;
+      });
+    }
+  }
 
 
   void onTick(Timer timer){
-    setState(() {
+    if(totalSeconds==0){
+      setState(() {
+        round++;
+        totalSeconds=tempSec;
+        checkRound();
+      });
+    } else
+      setState(() {
       totalSeconds=totalSeconds-1;
     });
   }
 
   void onStartPressed(){
     timer=Timer.periodic(Duration(seconds: 1), onTick,);
+    firstStart=false;
     setState(() {
       isRunning=true;
     });
@@ -68,13 +103,32 @@ class _HomeScreenState extends State<HomeScreen> {
             flex: 2,
             child: Center(
               child: Container(
-                child: Text(
-                  "$totalSeconds",
-                  style: TextStyle(
-                    color: Theme.of(context).cardColor,
-                    fontSize: 80,
-                    fontWeight: FontWeight.w600,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "${format(totalSeconds)[0]}",
+                      style: TextStyle(
+                        color: Theme.of(context).cardColor,
+                        fontSize: 80,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(" : ",
+                      style: TextStyle(
+                        color: Theme.of(context).cardColor,
+                        fontSize: 80,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text("${format(totalSeconds)[1]}",
+                      style: TextStyle(
+                        color: Theme.of(context).cardColor,
+                        fontSize: 80,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -82,8 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
           ///time selecter
           Flexible(
+
             flex: 1,
-            child: Container(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -188,7 +244,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: IconButton(
                 iconSize: 110,
                 color: Theme.of(context).cardColor,
-                onPressed: isRunning ? onPausePressed: onStartPressed,
+                onPressed:
+                isRunning ? onPausePressed: onStartPressed,
                 icon: Icon(
                     isRunning ? Icons.pause_circle_filled_outlined: Icons.play_circle_fill_outlined,
                 ),
@@ -265,36 +322,56 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void thirtyFiveMin(){
+    round=0;
+    goal=0;
+    firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
-      totalSeconds=3500;
+      totalSeconds=thirFive;
+      tempSec=thirFive;
       onPausePressed();
     });
   }
 
   void thirtyMin(){
+    round=0;
+    goal=0;
+    firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
-      totalSeconds=3000;
+      totalSeconds=thir;
+      tempSec=thir;
       onPausePressed();
     });
   }
 
   void twentyFiveMin(){
+    round=0;
+    goal=0;
+    firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
-      totalSeconds=2500;
+      totalSeconds=twenFive;
+      tempSec=twenFive;
       onPausePressed();
     });
   }
 
   void twentyMin(){
+    round=0;
+    goal=0;
+    firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
-      totalSeconds=2000;
+      totalSeconds=twen;
+      tempSec=twen;
       onPausePressed();
     });
   }
 
   void fifteenMin(){
+    round=0;
+    goal=0;
+    firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
-      totalSeconds=1500;
+      totalSeconds=fif;
+      tempSec=fif;
       onPausePressed();
     });
   }
