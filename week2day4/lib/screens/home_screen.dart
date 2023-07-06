@@ -9,8 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const int restSec=11;
-  static const int fif=3;
+  static const int restSec=300;
+  static const int fif=5;
   static const int twen =1200;
   static const int twenFive=1500;
   static const int thir=1800;
@@ -31,8 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _isInverted5 =false;
 
   late Timer timer;
-
-
 
   void _invertColors(int btn) {
     setState(() {
@@ -90,35 +88,29 @@ class _HomeScreenState extends State<HomeScreen> {
     return minSec;
   }
 
-  void runOnTime(){
+  void checkRound(){
     if(round==4){
+      totalSeconds=restSec;
       round=0;
       goal++;
+      setState(() {
+        totalSeconds--;
+      });
     }
-    setState(() {
-      totalSeconds=totalSeconds-1;
-    });
   }
 
   void onTick(Timer timer){
-    if(totalSeconds==0){
-      if(isRest==true){
-        round++;
-        isRest=false;
-        totalSeconds=restSec;
-        runOnTime();
-      }
-      else if(isRest==false){
-        isRest=true;
-        totalSeconds=tempSec;
-        runOnTime();
-      }
+      if(totalSeconds==0){
+        setState(() {
+          round++;
+          totalSeconds=tempSec;
+          checkRound();
+        });
+      } else
+        setState(() {
+          totalSeconds=totalSeconds-1;
+        });
     }
-    else
-      setState(() {
-        totalSeconds=totalSeconds-1;
-      });
-  }
 
   void onStartPressed(){
     timer=Timer.periodic(Duration(seconds: 1), onTick,);

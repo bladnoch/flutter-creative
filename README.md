@@ -55,9 +55,19 @@
 
 
 7/6/2023
-- 
-- 결과 https://imgur.com/a/yaENMMm
-- <img width="466" alt="스크린샷 2023-07-06 오후 10 38 47" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/1f6a2963-7307-4c47-9d26-ca4c04915ab9">
+- POMODORO TIMER challenge
+
+- 목표 :
+  - 앱은 아래와 같은 기능을 갖고있어야 합니다.
+  - 유저가 타이머의 시간(15, 20, 25, 30, 35)을 선택할 수 있어야 합니다.
+  - 유저가 타이머를 재설정 (리셋)할 수 있어야 합니다.
+  - 유저가 한 사이클을 완료한 횟수를 카운트해야 합니다.
+  - 유저가 4개의 사이클(1라운드)를 완료한 횟수를 카운트해야 합니다.
+  - 각 라운드가 끝나면 사용자가 5분간 휴식을 취할 수 있어야 합니다.
+
+- 결과 : https://imgur.com/a/2p1tHBS
+- <img width="426" alt="스크린샷 2023-07-07 오전 12 09 55" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/1cd198e3-4212-473d-bdd0-2f7f81e0feef">
+
 - 
 
 
