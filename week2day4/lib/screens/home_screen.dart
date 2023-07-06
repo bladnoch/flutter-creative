@@ -154,6 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
             flex: 1,
             child: Center(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
