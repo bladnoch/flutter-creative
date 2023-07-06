@@ -34,6 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return minSec;
   }
 
+  void runOnTime(){
+    setState(() {
+      totalSeconds=totalSeconds-1;
+    });
+  }
+
   void onTick(Timer timer){
     if(round==4){
       round=0;
@@ -44,10 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
         round++;
         isRest=false;
         totalSeconds=restSec;
+        runOnTime();
       }
       else if(isRest==false){
         isRest=true;
         totalSeconds=tempSec;
+        runOnTime();
       }
     }
     else
