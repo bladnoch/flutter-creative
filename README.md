@@ -51,5 +51,13 @@
 
 7/5/2023
 -
+
+
+
+7/6/2023
 - 
+- 결과 https://imgur.com/a/yaENMMm
+- <img width="466" alt="스크린샷 2023-07-06 오후 10 38 47" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/1f6a2963-7307-4c47-9d26-ca4c04915ab9">
+- 
+
 
