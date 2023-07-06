@@ -9,7 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const int restSec=7;
+  static const int restSec=11;
   static const int fif=3;
   static const int twen =1200;
   static const int twenFive=1500;
@@ -24,7 +24,65 @@ class _HomeScreenState extends State<HomeScreen> {
   int round=0;
   int goal=0;
 
+  bool _isInverted =false;
+  bool _isInverted2 =false;
+  bool _isInverted3 =false;
+  bool _isInverted4 =false;
+  bool _isInverted5 =false;
+
   late Timer timer;
+
+
+
+  void _invertColors(int btn) {
+    setState(() {
+      _isInverted = !_isInverted;
+      switch (btn) {
+        case 1:
+          _isInverted =true;
+          _isInverted2 =false;
+          _isInverted3 =false;
+          _isInverted4 =false;
+          _isInverted5 =false;
+          break;
+
+        case 2:
+          _isInverted =false;
+          _isInverted2 =true;
+          _isInverted3 =false;
+          _isInverted4 =false;
+          _isInverted5 =false;
+          break;
+
+        case 3:
+          _isInverted =false;
+          _isInverted2 =false;
+          _isInverted3 =true;
+          _isInverted4 =false;
+          _isInverted5 =false;
+          break;
+
+        case 4:
+          _isInverted =false;
+          _isInverted2 =false;
+          _isInverted3 =false;
+          _isInverted4 =true;
+          _isInverted5 =false;
+          break;
+
+        case 5:
+          _isInverted =false;
+          _isInverted2 =false;
+          _isInverted3 =false;
+          _isInverted4 =false;
+          _isInverted5 =true;
+          break;
+
+        default:
+          print('Default case');
+      }
+    });
+  }
 
   List<String> format(int seconds){
     var duration=Duration(seconds: seconds);
@@ -170,12 +228,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 7),
                         child: Text('15',
                           style: TextStyle(
-                            color: Colors.redAccent,
+                            // color: Colors.redAccent,
                           ),
                         ),
                       ),
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).cardColor,
+                        foregroundColor: _isInverted ? Colors.redAccent: Theme.of(context).cardColor,
+                        backgroundColor: _isInverted ? Theme.of(context).cardColor: Colors.redAccent,
                         textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
                       ),
                     ),
@@ -188,11 +247,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 7),
                         child: Text('20',
                           style: TextStyle(
-                            color: Colors.redAccent,
+                            // color: Colors.redAccent,
                           ),),
                       ),
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).cardColor,
+                        foregroundColor: _isInverted2 ? Colors.redAccent: Theme.of(context).cardColor,
+                        backgroundColor: _isInverted2 ? Theme.of(context).cardColor: Colors.redAccent,
                         textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -205,11 +265,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 7),
                         child: const Text('25',
                           style: TextStyle(
-                            color: Colors.redAccent,
+                            // color: Colors.redAccent,
                           ),),
                       ),
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).cardColor,
+                        foregroundColor: _isInverted3 ? Colors.redAccent: Theme.of(context).cardColor,
+                        backgroundColor: _isInverted3 ? Theme.of(context).cardColor: Colors.redAccent,
                         textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -222,11 +283,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 7),
                         child: const Text('30',
                           style: TextStyle(
-                            color: Colors.redAccent,
+                            // color: Colors.redAccent,
                           ),),
                       ),
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).cardColor,
+                        foregroundColor: _isInverted4 ? Colors.redAccent: Theme.of(context).cardColor,
+                        backgroundColor: _isInverted4 ? Theme.of(context).cardColor: Colors.redAccent,
                         textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -239,11 +301,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 7),
                         child: const Text('35',
                           style: TextStyle(
-                            color: Colors.redAccent,
+                            // color:Colors.redAccent,
                           ),),
                       ),
                       style: TextButton.styleFrom(
-                        backgroundColor: Theme.of(context).cardColor,
+                        foregroundColor: _isInverted5 ? Colors.redAccent: Theme.of(context).cardColor,
+                        backgroundColor: _isInverted5 ? Theme.of(context).cardColor: Colors.redAccent,
                         textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -338,6 +401,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void thirtyFiveMin(){
+    _invertColors(5);
     round=0;
     isRest=true;
     goal=0;
@@ -350,6 +414,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void thirtyMin(){
+    _invertColors(4);
     round=0;
     isRest=true;
     goal=0;
@@ -362,6 +427,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void twentyFiveMin(){
+    _invertColors(3);
     round=0;
     isRest=true;
     goal=0;
@@ -374,6 +440,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void twentyMin(){
+    _invertColors(2);
     round=0;
     isRest=true;
     goal=0;
@@ -386,6 +453,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void fifteenMin(){
+    _invertColors(1);
     round=0;
     isRest=true;
     goal=0;
