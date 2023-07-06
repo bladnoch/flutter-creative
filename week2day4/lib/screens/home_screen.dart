@@ -9,9 +9,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const int restSec=300;
+  static const int restSec=7;
 
-  static const int fif=900;
+  static const int fif=3;
   static const int twen =1200;
   static const int twenFive=1500;
   static const int thir=1800;
@@ -333,7 +333,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void thirtyFiveMin(){
     round=0;
-    roundCount=1;
+    isRest=true;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -345,7 +345,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void thirtyMin(){
     round=0;
-    roundCount=1;
+    isRest=true;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -357,7 +357,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void twentyFiveMin(){
     round=0;
-    roundCount=1;
+    isRest=true;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -369,7 +369,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void twentyMin(){
     round=0;
-    roundCount=1;
+    isRest=true;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -381,7 +381,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void fifteenMin(){
     round=0;
-    roundCount=1;
+    isRest=true;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
