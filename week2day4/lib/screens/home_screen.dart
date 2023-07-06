@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,20 +9,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const int restSec=500;
+  static const int restSec=6;
 
-  static const int fif=900;
+  static const int fif=3;
   static const int twen =1200;
   static const int twenFive=1500;
   static const int thir=1800;
   static const int thirFive=2100;
 
+  bool isRest=true;
   bool firstStart=true;
   late int tempSec;
   int totalSeconds=1500;
   bool isRunning = false;
   int round=0;
+  int roundCount=1;
   int goal=0;
+
   late Timer timer;
 
   List<String> format(int seconds){
@@ -33,29 +34,26 @@ class _HomeScreenState extends State<HomeScreen> {
     return minSec;
   }
 
-  void checkRound(){
+  void onTick(Timer timer){
     if(round==4){
-      totalSeconds=restSec;
       round=0;
       goal++;
-      setState(() {
-        totalSeconds--;
-      });
     }
-  }
-
-
-  void onTick(Timer timer){
-    if(totalSeconds==0){
-      setState(() {
+    else if(totalSeconds==0){
+      if(isRest==true){
         round++;
+        isRest=false;
+        totalSeconds=restSec;
+      }
+      else if(isRest==false){
+        isRest=true;
         totalSeconds=tempSec;
-        checkRound();
-      });
-    } else
+      }
+    }
+    else
       setState(() {
-      totalSeconds=totalSeconds-1;
-    });
+        totalSeconds=totalSeconds-1;
+      });
   }
 
   void onStartPressed(){
@@ -84,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 2,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 60,horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 70,horizontal: 20),
               child: Container(
                 alignment: Alignment.topLeft,
                 child: Text('POMOTIMER',
@@ -102,137 +100,148 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 2,
             child: Center(
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "${format(totalSeconds)[0]}",
-                      style: TextStyle(
-                        color: Theme.of(context).cardColor,
-                        fontSize: 80,
-                        fontWeight: FontWeight.w600,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF0EDCC),
+                      borderRadius: BorderRadius.circular(3),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 15),
+                      child: Text(
+                        "${format(totalSeconds)[0]}",
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 70,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
-                    Text(" : ",
-                      style: TextStyle(
-                        color: Theme.of(context).cardColor,
-                        fontSize: 80,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  Text(" : ",
+                    style: TextStyle(
+                      color: Theme.of(context).cardColor.withOpacity(0.6),
+                      fontSize: 50,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF0EDCC),
+                      borderRadius: BorderRadius.circular(3),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 15),
+                      child: Text(
+                        "${format(totalSeconds)[1]}",
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 70,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
-                    Text("${format(totalSeconds)[1]}",
-                      style: TextStyle(
-                        color: Theme.of(context).cardColor,
-                        fontSize: 80,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
 
           ///time selecter
           Flexible(
-
             flex: 1,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: TextButton(
-                        onPressed: fifteenMin,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text('15',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                            ),
+            child: Center(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: TextButton(
+                      onPressed: fifteenMin,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                        child: Text('15',
+                          style: TextStyle(
+                            color: Colors.redAccent,
                           ),
                         ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).cardColor,
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
-                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).cardColor,
+                        textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold,),
                       ),
                     ),
-
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10,),
-                      child: TextButton(
-                        onPressed: twentyMin,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text('20',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                            ),),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).cardColor,
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8,),
+                    child: TextButton(
+                      onPressed: twentyMin,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                        child: Text('20',
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                          ),),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).cardColor,
+                        textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: TextButton(
-                        onPressed: twentyFiveMin,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Text('25',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                            ),),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).cardColor,
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: TextButton(
+                      onPressed: twentyFiveMin,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                        child: const Text('25',
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                          ),),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).cardColor,
+                        textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: TextButton(
-                        onPressed: thirtyMin,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Text('30',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                            ),),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).cardColor,
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: TextButton(
+                      onPressed: thirtyMin,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                        child: const Text('30',
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                          ),),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).cardColor,
+                        textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10,),
-                      child: TextButton(
-                        onPressed: thirtyFiveMin,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Text('35',
-                            style: TextStyle(
-                              color: Colors.redAccent,
-                            ),),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).cardColor,
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                        ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8,),
+                    child: TextButton(
+                      onPressed: thirtyFiveMin,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 7),
+                        child: const Text('35',
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                          ),),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Theme.of(context).cardColor,
+                        textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -323,6 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void thirtyFiveMin(){
     round=0;
+    roundCount=1;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -334,6 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void thirtyMin(){
     round=0;
+    roundCount=1;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -345,6 +356,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void twentyFiveMin(){
     round=0;
+    roundCount=1;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -356,6 +368,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void twentyMin(){
     round=0;
+    roundCount=1;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
@@ -367,6 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void fifteenMin(){
     round=0;
+    roundCount=1;
     goal=0;
     firstStart ? {timer=Timer.periodic(Duration(seconds: 1), onTick,),firstStart=false}:{};
     setState(() {
