@@ -91,17 +91,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void runOnTime(){
+    if(round==4){
+      round=0;
+      goal++;
+    }
     setState(() {
       totalSeconds=totalSeconds-1;
     });
   }
 
   void onTick(Timer timer){
-    if(round==4){
-      round=0;
-      goal++;
-    }
-    else if(totalSeconds==0){
+    if(totalSeconds==0){
       if(isRest==true){
         round++;
         isRest=false;
