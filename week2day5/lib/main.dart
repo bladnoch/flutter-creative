@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:week2day5/screen/home_screen.dart';
+import 'package:week2day5/services/api_service_popular.dart';
 
 void main() {
-  runApp(const MyApp());
+  // ApiService().getPopularMovies();
+  // ApiService().getOnScreenMovies();
+  ApiService().getComingMovies();
+
+  // runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
