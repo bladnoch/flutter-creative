@@ -5,6 +5,36 @@
 - Pomodoro timer with extra functions
 
 
+<h2>7/7/2023</h2>
+
+- popular movie application
+- popular movie API(https://movies-api.nomadcoders.workers.dev/popular) :
+
+<pre><code>{
+  "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg",
+            "genre_ids": [
+                14,
+                28,
+                12
+            ],
+            "id": 455476,
+            "original_language": "en",
+            "original_title": "Knights of the Zodiac",
+            "overview": "When a headstrong street orphan, Seiya, in search of his abducted sister unwittingly taps into hidden powers, he discovers he might be the only person alive who can protect a reincarnated goddess, sent to watch over humanity. Can he let his past go and embrace his destiny to become a Knight of the Zodiac?",
+            "popularity": 3369.887,
+            "poster_path": "/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg",
+            "release_date": "2023-04-27",
+            "title": "Knights of the Zodiac",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 312
+        },
+  }</code></pre>
+
 
 
 <h2>7/6/2023</h2>
