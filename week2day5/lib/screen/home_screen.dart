@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        foregroundColor: Colors.redAccent,
+        foregroundColor: Colors.black,
         title: Text("",
         style: TextStyle(
           fontSize: 20,
@@ -30,21 +30,25 @@ class HomeScreen extends StatelessWidget {
       body:
       Column(
         children: [
-          Container(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text("Popular Movies",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+          Flexible(
+            flex: 3,
+            child: Container(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text("Popular Movies",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             ),
           ),
 
           ///popular movies
-          Expanded(
+          Flexible(
+            flex: 14,
             child: FutureBuilder(
               future: popMovies,
               builder: (context,snapshot){
@@ -68,18 +72,19 @@ class HomeScreen extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
               child: Text("Now in Cinemas",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 30,
                 ),
               ),
             ),
           ),
 
           ///on screen movies
-          Expanded(
+          Flexible(
+            flex: 10,
             child: FutureBuilder(
               future: onScreenMovies,
               builder: (context,snapshot){
@@ -103,18 +108,19 @@ class HomeScreen extends StatelessWidget {
           Container(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text("Coming soon",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 30,
                 ),
               ),
             ),
           ),
 
           ///coming movies
-          Expanded(
+          Flexible(
+            flex: 15,
             child: FutureBuilder(
               future: comingMovies,
               builder: (context,snapshot){
@@ -150,7 +156,7 @@ class HomeScreen extends StatelessWidget {
         return Column(
           children: [
             Container(
-              width: 338,
+              width: 370,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -185,7 +191,7 @@ class HomeScreen extends StatelessWidget {
               height: 100,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
                 boxShadow:[
                   BoxShadow(
                     blurRadius:5,
@@ -197,15 +203,19 @@ class HomeScreen extends StatelessWidget {
               child: Image.network(movie.image),
             ),
             SizedBox(
-              height: 10,
+              height: 0,
             ),
-            SizedBox(
-              width: 120,
-                child: Text(movie.title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                ),),),
+            Container(
+              width: 170,
+                height: 40,
+                child: Center(
+                  child: Text(movie.title,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                  ),),
+                ),),
           ],
         );
       },
@@ -219,7 +229,7 @@ class HomeScreen extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: snapshot.data!.length,
-      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+      padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
       itemBuilder: (context,index){
         var movie =snapshot.data![index];
         return Column(
@@ -228,7 +238,7 @@ class HomeScreen extends StatelessWidget {
               height: 100,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                   boxShadow:[
                     BoxShadow(
                         blurRadius:5,
@@ -243,12 +253,14 @@ class HomeScreen extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              width: 120,
-              child: Text(movie.title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),),),
+              width: 170,
+              child: Center(
+                child: Text(movie.title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),),
+              ),),
           ],
         );
       },
