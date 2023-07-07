@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:week2day5/services/api_service.dart';
+import 'package:week2day5/widgets/onscreen_movie_widget.dart';
+import 'package:week2day5/widgets/popular_movie_widget.dart';
 
 import '../models/coming_movie.dart';
 import '../models/on_screen_movie_model.dart';
@@ -153,25 +155,7 @@ class HomeScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       itemBuilder: (context,index){
         var movie =snapshot.data![index];
-        return Column(
-          children: [
-            Container(
-              width: 370,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow:[
-                    BoxShadow(
-                        blurRadius:5,
-                        offset: Offset(2,2),
-                        color: Colors.black.withOpacity(0.8)
-                    )
-                  ]
-              ),
-              child: Image.network(movie.image),
-            ),
-          ],
-        );
+        return PopularMovie(image: movie.image, title: movie.title, id: movie.id,);
       },
       separatorBuilder: (context,index) =>const SizedBox(width: 20,),
     );
@@ -185,37 +169,7 @@ class HomeScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
       itemBuilder: (context,index){
         var movie =snapshot.data![index];
-        return Column(
-          children: [
-            Container(
-              height: 100,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow:[
-                  BoxShadow(
-                    blurRadius:5,
-                    offset: Offset(2,2),
-                    color: Colors.black.withOpacity(0.8)
-                  )
-                ]
-              ),
-              child: Image.network(movie.image),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              width: 170,
-                child: Center(
-                  child: Text(movie.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                  ),),
-                ),),
-          ],
-        );
+        return OnScreenMovie(image: movie.image, title: movie.title, id: movie.id,);
       },
       separatorBuilder: (context,index) =>const SizedBox(width: 20,),
     );
