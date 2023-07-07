@@ -33,6 +33,8 @@ class HomeScreen extends StatelessWidget {
       body:
       Column(
         children: [
+
+          ///Text: popular movie
           Flexible(
             flex: 3,
             child: Container(
@@ -72,6 +74,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
+          ///Text : Now in Cinemas
           Container(
             alignment: Alignment.topLeft,
             child: Padding(
@@ -108,6 +111,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
+          ///text : Coming soon
           Container(
             alignment: Alignment.topLeft,
             child: Padding(
@@ -148,7 +152,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  ///popular
+  ///popular method
   ListView buildPopList(AsyncSnapshot<List<PopularModel>> snapshot) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
@@ -162,7 +166,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  ///on screen
+  ///on screen method
   ListView buildOnScreenList(AsyncSnapshot<List<OnScreenModel>> snapshot) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
@@ -176,8 +180,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-  /// coming
+  /// coming method
   ListView buildComingList(AsyncSnapshot<List<ComingModel>> snapshot) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,

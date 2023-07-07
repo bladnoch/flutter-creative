@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:week2day5/screen/detail_screen.dart';
 
 class PopularMovie extends StatelessWidget {
 
@@ -16,7 +17,8 @@ class PopularMovie extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        print("hello");
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => DetailScreen(image: image, title: title, id: id) ),);
       },
       child: Column(
         children: [
