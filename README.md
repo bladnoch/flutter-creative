@@ -100,6 +100,8 @@
 - https://movies-api.nomadcoders.workers.dev/movie?id=1
 - id= 를 API에 저장된 아이디로 변환시 세부정보 접근
 - 접근시 요소
+- 포스터, 제목, 등급, 개요, 장르
+- poster_path, original_title, vote_average, overview, genre_ids
 <pre><code>
 {
     "adult": false,

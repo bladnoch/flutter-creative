@@ -6,15 +6,14 @@ import 'package:week2day5/models/on_screen_movie_model.dart';
 import 'package:week2day5/models/popular_movie_model.dart';
 
 class ApiService{
-  final String baseUrl ="https://movies-api.nomadcoders.workers.dev";
-
-  final String popular="popular";
-  final String onScreen="now-playing";
-  final String coming="coming-soon";
-  final String movieDetail="movie?=id=";
+  static const String baseUrl ="https://movies-api.nomadcoders.workers.dev";
+  static const String popular="popular";
+  static const String onScreen="now-playing";
+  static const String coming="coming-soon";
+  static const String movieDetail="movie?=id=";
 
   ///image, id
-  Future<List<PopularModel>> getPopularMovies() async{
+  static Future<List<PopularModel>> getPopularMovies() async{
     List<PopularModel> popMoviesInstance=[];
     final url=Uri.parse('$baseUrl/$popular');
     final response = await http.get(url);

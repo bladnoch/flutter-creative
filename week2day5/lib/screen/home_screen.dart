@@ -14,7 +14,8 @@ class HomeScreen extends StatelessWidget {
         title: Text("asdf ",
         style: TextStyle(
           fontSize: 20,
-        ),),
+        ),
+        ),
       ),
     );
   }

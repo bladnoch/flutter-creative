@@ -4,7 +4,7 @@ import 'package:week2day5/services/api_service.dart';
 
 void main() {
   // ApiService().getPopularMovies();
-  ApiService().getOnScreenMovies();
+  // ApiService().getOnScreenMovies();
   // ApiService().getComingMovies();
 
   runApp(const MyApp());
