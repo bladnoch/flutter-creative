@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week2day5/services/api_service.dart';
+import 'package:week2day5/widgets/coming_movie_widget.dart';
 import 'package:week2day5/widgets/onscreen_movie_widget.dart';
 import 'package:week2day5/widgets/popular_movie_widget.dart';
 
@@ -184,38 +185,7 @@ class HomeScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
       itemBuilder: (context,index){
         var movie =snapshot.data![index];
-        return Column(
-          children: [
-            Container(
-              height: 100,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow:[
-                    BoxShadow(
-                        blurRadius:5,
-                        offset: Offset(2,2),
-                        color: Colors.black.withOpacity(0.8)
-                    )
-                  ]
-              ),
-              child: Image.network(movie.image),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              width: 170,
-              child: Center(
-                child: Text(movie.title,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),),
-              ),),
-          ],
-        );
+        return ComingMovie(image: movie.image, title: movie.title, id: movie.id,);
       },
       separatorBuilder: (context,index) =>const SizedBox(width: 20,),
     );
