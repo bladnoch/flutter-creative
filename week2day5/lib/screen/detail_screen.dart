@@ -12,6 +12,12 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var a=8;
+
+    void countingStars(){
+      // if(a)
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -29,100 +35,120 @@ class DetailScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Flexible(
-              flex: 3,
-              child:Container(
-                alignment: Alignment.bottomCenter,
-                decoration: BoxDecoration(
-                  color: Colors.red,
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: [
+
+            ///Title
+            Flexible(
+                flex: 7,
+                child:Container(
+                  alignment: Alignment.bottomLeft,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                  ),
+                  child:  Text("$title",style: TextStyle(
+                    color: Colors.white70,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 30,
+                  ),),
+
                 ),
-                child:  Text("title here",),
-
-              ),
-          ),
-          Flexible(
-            flex: 1,
-            child:Container(
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child:  Text("rate here",),
-
             ),
-          ),
-          Flexible(
-            flex: 1,
-            child:Container(
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                color: Colors.pink,
-              ),
-              child:  Text("hours | genre",),
+            SizedBox(height: 5,),
 
-            ),
-          ),
-          Flexible(
-            flex: 1,
-            child:Container(
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                color: Colors.green,
-              ),
-              child:  Text("Storyline",),
+            ///Stars
+            Flexible(
+              flex: 1,
+              child:Container(
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Icon(Icons.star),
 
-            ),
-          ),
-          Flexible(
-            flex: 1,
-            child:Container(
-              alignment: Alignment.bottomLeft,
-              decoration: BoxDecoration(
-                color: Colors.yellow,
               ),
-              child:  Text("storyline here",),
-
             ),
-          ),
-          // Container(
-          //   color: Colors.deepPurpleAccent,
-          //
-          //     child: Text("title here"
-          //     ),
-          // ),
-          //
-          // Container(
-          //   color: Colors.green,
-          //     height: 40,
-          //     child: Text("rate here"
-          //     ),
-          // ),
-          // Container(
-          //   color: Colors.redAccent,
-          //   height: 40,
-          //     child: Text("total hours | genre here"
-          //     ),
-          // ),
-          // Text("Storyline"),
-          // Container(
-          //   color: Colors.lightBlue,
-          //   height: 200,
-          //     child: Text("storyline here"),
-          // ),
-          // Container(
-          //   height: 80,
-          //   width: 200,
-          //   decoration: BoxDecoration(
-          //     color: Colors.amber,
-          //   ),
-          //     child: Center(
-          //         child: Text(
-          //             "Buy ticket"),
-          //     ),
-          // ),
-        ],
+            SizedBox(height: 10,),
+
+
+            ///hrs/genre
+            Flexible(
+              flex: 1,
+              child:Container(
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  color: Colors.pink,
+                ),
+                child:  Text("hours | genre",style: TextStyle(
+                  color: Colors.white70.withOpacity(0.6),
+                ),),
+
+              ),
+            ),
+
+            ///Storyline
+            Flexible(
+              flex: 2,
+              child:Container(
+                alignment: Alignment.bottomLeft,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                ),
+                child:  Text("Storyline",style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                ),
+                ),
+              ),
+            ),
+            SizedBox(height: 5,),
+
+            ///Storyline API
+            Flexible(
+              flex: 7,
+              child:Container(
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                ),
+                child:  Text("storyline here",
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                ),),
+
+              ),
+            ),
+            Container(
+              clipBehavior: Clip.hardEdge,
+              height: 60,
+              width: 250,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.amber,
+                  boxShadow:[
+                    BoxShadow(
+                        blurRadius:5,
+                        offset: Offset(1,1),
+                        color: Colors.black.withOpacity(0.2)
+                    )
+                  ]
+              ),
+                child: Center(
+                    child: Text(
+                        "Buy ticket",style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 16,
+                    ),),
+                ),
+            ),
+            SizedBox(height: 60,),
+          ],
+        ),
       ),
     );
   }
