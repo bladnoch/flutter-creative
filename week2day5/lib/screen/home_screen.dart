@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text("Popular Movies",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w800,
                     fontSize: 30,
                   ),
                 ),
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
 
           ///popular movies
           Flexible(
-            flex: 14,
+            flex: 16,
             child: FutureBuilder(
               future: popMovies,
               builder: (context,snapshot){
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
               child: Text("Now in Cinemas",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                   fontSize: 30,
                 ),
               ),
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
 
           ///on screen movies
           Flexible(
-            flex: 10,
+            flex: 13,
             child: FutureBuilder(
               future: onScreenMovies,
               builder: (context,snapshot){
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text("Coming soon",
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                   fontSize: 30,
                 ),
               ),
@@ -203,14 +203,12 @@ class HomeScreen extends StatelessWidget {
               child: Image.network(movie.image),
             ),
             SizedBox(
-              height: 0,
+              height: 10,
             ),
             Container(
               width: 170,
-                height: 40,
                 child: Center(
                   child: Text(movie.title,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
@@ -252,10 +250,11 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            SizedBox(
+            Container(
               width: 170,
               child: Center(
                 child: Text(movie.title,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
