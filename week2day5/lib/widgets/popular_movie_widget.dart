@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Movie extends StatelessWidget {
-  const Movie({super.key});
+class PopularMovie extends StatelessWidget {
+  const PopularMovie({super.key});
 
   @override
   Widget build(BuildContext context) {
