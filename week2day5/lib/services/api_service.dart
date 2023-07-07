@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:week2day5/models/coming_movie.dart';
+import 'package:week2day5/models/coming_movie_model.dart';
 import 'package:week2day5/models/on_screen_movie_model.dart';
 import 'package:week2day5/models/popular_movie_model.dart';
 

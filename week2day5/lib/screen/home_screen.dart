@@ -3,7 +3,7 @@ import 'package:week2day5/services/api_service.dart';
 import 'package:week2day5/widgets/onscreen_movie_widget.dart';
 import 'package:week2day5/widgets/popular_movie_widget.dart';
 
-import '../models/coming_movie.dart';
+import '../models/coming_movie_model.dart';
 import '../models/on_screen_movie_model.dart';
 import '../models/popular_movie_model.dart';
 
