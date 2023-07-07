@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+import 'package:week2day5/models/popular_movie_model.dart';
 
 class ApiService{
   final String baseUrl ="https://movies-api.nomadcoders.workers.dev";
@@ -12,7 +15,12 @@ class ApiService{
     final url=Uri.parse('$baseUrl/$popular');
     final response = await http.get(url);
     if (response.statusCode==200){
-      print(response.body);
+      final Map<String,dynamic> mapPopularMovies= jsonDecode(response.body);
+      final List<dynamic> popularMovies=mapPopularMovies["results"];
+
+      for(var movies in popularMovies){
+        PopularModel.fromJson(movies);
+      }
     }
     throw Error();
   }

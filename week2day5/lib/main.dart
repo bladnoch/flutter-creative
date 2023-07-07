@@ -3,11 +3,11 @@ import 'package:week2day5/screen/home_screen.dart';
 import 'package:week2day5/services/api_service_popular.dart';
 
 void main() {
-  // ApiService().getPopularMovies();
+  ApiService().getPopularMovies();
   // ApiService().getOnScreenMovies();
-  ApiService().getComingMovies();
+  // ApiService().getComingMovies();
 
-  // runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
