@@ -28,10 +28,16 @@ class ApiService{
   }
 
   void getOnScreenMovies() async{
+    List<
     final url=Uri.parse('$baseUrl/$onScreen');
     final response = await http.get(url);
     if (response.statusCode==200){
-      print(response.body);
+      final Map<String,dynamic> mapOnScreenMovies= jsonDecode(response.body);
+      final List<dynamic> onScreenMovies=mapOnScreenMovies["results"];
+
+      for(var movies in onScreenMovies){
+
+      }
     }
     throw Error();
   }
