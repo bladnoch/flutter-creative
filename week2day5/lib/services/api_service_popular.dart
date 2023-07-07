@@ -11,7 +11,8 @@ class ApiService{
   final String coming="coming-soon";
   final String movieDetail="movie?=id=";
 
-  void getPopularMovies() async{
+  Future<List<PopularModel>> getPopularMovies() async{
+    List<PopularModel> popMoviesInstance=[];
     final url=Uri.parse('$baseUrl/$popular');
     final response = await http.get(url);
     if (response.statusCode==200){
@@ -19,8 +20,9 @@ class ApiService{
       final List<dynamic> popularMovies=mapPopularMovies["results"];
 
       for(var movies in popularMovies){
-        PopularModel.fromJson(movies);
+        popMoviesInstance.add(PopularModel.fromJson(movies));
       }
+      return popMoviesInstance;
     }
     throw Error();
   }
