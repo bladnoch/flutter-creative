@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:week2day5/services/api_service.dart';
 
-class DetailScreen extends StatelessWidget {
+import '../models/movie_detail_model.dart';
+
+class DetailScreen extends StatefulWidget {
   final String image, title, id;
+
 
   DetailScreen({
     super.key,
@@ -9,6 +13,21 @@ class DetailScreen extends StatelessWidget {
     required this.title,
     required this.id,
   });
+
+  @override
+  State<DetailScreen> createState() => _DetailScreenState();
+}
+
+class _DetailScreenState extends State<DetailScreen> {
+
+  late Future<MovieDetailModel> movie;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    movie=ApiService.getDetail(widget.id);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +67,7 @@ class DetailScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.red,
                   ),
-                  child:  Text("$title",style: TextStyle(
+                  child:  Text("${widget.title}",style: TextStyle(
                     color: Colors.white70,
                     fontWeight: FontWeight.w800,
                     fontSize: 30,
@@ -114,12 +133,22 @@ class DetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.grey,
                 ),
-                child:  Text("storyline here",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                ),),
+                child: FutureBuilder(
+                  future: movie,
+                  builder: (context,snapshot){
+                    if(snapshot.hasData){
+                      return Text(snapshot.data!.title,
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      );
+                    }
+                    return Text("...");
+                  },
+                )
+
 
               ),
             ),

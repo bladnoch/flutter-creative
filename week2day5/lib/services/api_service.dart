@@ -5,6 +5,8 @@ import 'package:week2day5/models/coming_movie_model.dart';
 import 'package:week2day5/models/on_screen_movie_model.dart';
 import 'package:week2day5/models/popular_movie_model.dart';
 
+import '../models/movie_detail_model.dart';
+
 class ApiService{
   static const String baseUrl ="https://movies-api.nomadcoders.workers.dev";
   static const String popular="popular";
@@ -63,6 +65,16 @@ class ApiService{
     throw Error();
   }
 
+  static Future<MovieDetailModel> getDetail(String id) async{
+    final url=Uri.parse("$baseUrl/$id");
+    final response= await http.get(url);
+    if(response.statusCode ==200){
+      final movie=jsonDecode(response.body);
+      MovieDetailModel.fromJson(movie);
+      return MovieDetailModel.fromJson(movie);
+    }
+    throw Error();
+  }
 
 
 }
