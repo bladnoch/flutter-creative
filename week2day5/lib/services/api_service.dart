@@ -30,7 +30,7 @@ class ApiService{
   }
 
   ///image, id, title
-  Future<List<OnScreenModel>> getOnScreenMovies() async{
+  static Future<List<OnScreenModel>> getOnScreenMovies() async{
     List<OnScreenModel> onScreenInstance=[];
     final url=Uri.parse('$baseUrl/$onScreen');
     final response = await http.get(url);
@@ -47,7 +47,7 @@ class ApiService{
   }
 
   ///image, id, title
-  Future<List<ComingModel>> getComingMovies() async{
+  static Future<List<ComingModel>> getComingMovies() async{
     List<ComingModel> comingInstance=[];
     final url=Uri.parse('$baseUrl/$coming');
     final response = await http.get(url);
