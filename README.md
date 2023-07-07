@@ -9,7 +9,6 @@
 
 - popular movie application
 - popular movie API(https://movies-api.nomadcoders.workers.dev/popular) :
-
 <pre><code>{
   "page": 1,
     "results": [
@@ -35,7 +34,147 @@
         },
   }</code></pre>
 
+- 상영중인 영화 API :  https://movies-api.nomadcoders.workers.dev/now-playing
+<pre><code>
+{
+    "dates": {
+        "maximum": "2023-07-12",
+        "minimum": "2023-05-25"
+    },
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg",
+            "genre_ids": [
+                14,
+                28,
+                12
+            ],
+            "id": 455476,
+            "original_language": "en",
+            "original_title": "Knights of the Zodiac",
+            "overview": "When a headstrong street orphan, Seiya, in search of his abducted sister unwittingly taps into hidden powers, he discovers he might be the only person alive who can protect a reincarnated goddess, sent to watch over humanity. Can he let his past go and embrace his destiny to become a Knight of the Zodiac?",
+            "popularity": 3369.887,
+            "poster_path": "/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg",
+            "release_date": "2023-04-27",
+            "title": "Knights of the Zodiac",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 312
+        },
+</code></pre>
 
+ - 상영예정 영화 API :  https://movies-api.nomadcoders.workers.dev/coming-soon
+<pre><code>
+{
+    "dates": {
+        "maximum": "2023-08-01",
+        "minimum": "2023-07-13"
+    },
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg",
+            "genre_ids": [
+                14,
+                28,
+                12
+            ],
+            "id": 455476,
+            "original_language": "en",
+            "original_title": "Knights of the Zodiac",
+            "overview": "When a headstrong street orphan, Seiya, in search of his abducted sister unwittingly taps into hidden powers, he discovers he might be the only person alive who can protect a reincarnated goddess, sent to watch over humanity. Can he let his past go and embrace his destiny to become a Knight of the Zodiac?",
+            "popularity": 3369.887,
+            "poster_path": "/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg",
+            "release_date": "2023-04-27",
+            "title": "Knights of the Zodiac",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 312
+        },
+</code></pre>
+
+- 영화에 대한 세부 정보
+- https://movies-api.nomadcoders.workers.dev/movie?id=1
+- id= 를 API에 저장된 아이디로 변환시 세부정보 접근
+- 접근시 요소
+<pre><code>
+{
+    "adult": false,
+    "backdrop_path": "/oqP1qEZccq5AD9TVTIaO6IGUj7o.jpg",
+    "belongs_to_collection": null,
+    "budget": 60000000,
+    "genres": [
+        {
+            "id": 14,
+            "name": "Fantasy"
+        },
+        {
+            "id": 28,
+            "name": "Action"
+        },
+        {
+            "id": 12,
+            "name": "Adventure"
+        }
+    ],
+    "homepage": "https://kotzmovie.com",
+    "id": 455476,
+    "imdb_id": "tt6528290",
+    "original_language": "en",
+    "original_title": "Knights of the Zodiac",
+    "overview": "When a headstrong street orphan, Seiya, in search of his abducted sister unwittingly taps into hidden powers, he discovers he might be the only person alive who can protect a reincarnated goddess, sent to watch over humanity. Can he let his past go and embrace his destiny to become a Knight of the Zodiac?",
+    "popularity": 3355.755,
+    "poster_path": "/qW4crfED8mpNDadSmMdi7ZDzhXF.jpg",
+    "production_companies": [
+        {
+            "id": 11341,
+            "logo_path": "/xytTBODEy3p20ksHL4Ftxr483Iv.png",
+            "name": "Stage 6 Films",
+            "origin_country": "US"
+        },
+        {
+            "id": 5542,
+            "logo_path": "/ayE4LIqoAWotavo7xdvYngwqGML.png",
+            "name": "Toei Animation",
+            "origin_country": "JP"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "JP",
+            "name": "Japan"
+        },
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2023-04-27",
+    "revenue": 6794519,
+    "runtime": 112,
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        },
+        {
+            "english_name": "Hungarian",
+            "iso_639_1": "hu",
+            "name": "Magyar"
+        }
+    ],
+    "status": "Released",
+    "tagline": "Go beyond your destiny.",
+    "title": "Knights of the Zodiac",
+    "video": false,
+    "vote_average": 6.482,
+    "vote_count": 310
+}
+</code></pre>
 
 <h2>7/6/2023</h2>
 
