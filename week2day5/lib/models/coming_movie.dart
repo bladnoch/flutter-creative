@@ -5,6 +5,6 @@ class ComingModel{
 
   ComingModel.fromJson(Map<String, dynamic> json)
       : image = "https://image.tmdb.org/t/p/w500${json['backdrop_path']}",
-        title="${json["original_title"]}",
+        title="${json["title"]}",
         id="${json['id']}";
 }
