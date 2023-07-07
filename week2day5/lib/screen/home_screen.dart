@@ -27,25 +27,51 @@ class HomeScreen extends StatelessWidget {
         ),
         ),
       ),
-      body: FutureBuilder(
-        future: popMovies,
-        builder: (context,snapshot){
-          if(snapshot.hasData){
-            return ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context,index){
-                var movie =snapshot.data![index];
-                return Text(movie.title);
-              },
-            );
-          }
-          else{
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
+      body:
+      Column(
+        children: [
+          Flexible(
+            flex: 1,
+            child: Container(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text("Popular Movies",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Flexible(
+            flex: 10,
+            child: Container(
+              child: FutureBuilder(
+                future: popMovies,
+                builder: (context,snapshot){
+                  if(snapshot.hasData){
+                    return ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context,index){
+                        var movie =snapshot.data![index];
+                        return Text(movie.title);
+                      },
+                      separatorBuilder: (context,index) =>const SizedBox(width: 20,),
+                    );
+                  }
+                  else{
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
