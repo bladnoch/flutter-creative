@@ -14,24 +14,29 @@ class PopularMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 370,
-          clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow:[
-                BoxShadow(
-                    blurRadius:5,
-                    offset: Offset(2,2),
-                    color: Colors.black.withOpacity(0.8)
-                )
-              ]
+    return GestureDetector(
+      onTap: (){
+        print("hello");
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 370,
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow:[
+                  BoxShadow(
+                      blurRadius:5,
+                      offset: Offset(2,2),
+                      color: Colors.black.withOpacity(0.8)
+                  )
+                ]
+            ),
+            child: Image.network(image),
           ),
-          child: Image.network(image),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
