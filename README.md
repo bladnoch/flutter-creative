@@ -8,6 +8,7 @@
 
 - 결과 : https://imgur.com/a/mQ8Tq5h
 - 화면 구성 : home screen, detail screen
+- <img width="427" alt="스크린샷 2023-07-08 오후 8 49 43" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/29ca363b-3c14-4f18-8fc1-f49b2b541407">   <img width="420" alt="스크린샷 2023-07-08 오후 8 49 52" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bcb2d913-fccb-4f3d-aa22-7a33e07afefc">
 
 - home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력
   - popular movies(인기) : https://movies-api.nomadcoders.workers.dev/popular
@@ -16,6 +17,7 @@
  
 - detail screen : 탭한 영화의 디테일을 화면에 출력
 - home_screen을 통해 id를 받아서 디테일 api를 사용
+-  https://movies-api.nomadcoders.workers.dev/movie?id=${id}
   - 뒷 배경화면으로 포스터 출력
   - 타이틀
   - 평점
@@ -27,6 +29,20 @@
 
 
 <h2>7/7/2023</h2>
+
+- last challenge : movie application
+  
+    - Home 스크린은 아래와 같은 기능을 갖고있어야 합니다.
+      - 가장 인기 있는 영화 목록이 표시되어야 합니다.
+      - 극장에서 상영 중인 영화 목록이 표시되어야 합니다.
+      - 곧 개봉할 영화 목록이 표시되어야 합니다.
+     movie를 탭하면 세부정보 화면으로 이동해야 합니다.
+    - 세부정보 화면에는 다음이 표시되어야 합니다.
+      - 영화의 포스터.
+      - 영화의 제목.
+      - 영화의 등급.
+      - 영화의 개요.
+      - 영화의 장르.
 
 - popular movie application
 - popular movie API(https://movies-api.nomadcoders.workers.dev/popular) :
