@@ -9,6 +9,7 @@ import '../models/movie_detail_model.dart';
 
 class ApiService{
   static const String baseUrl ="https://movies-api.nomadcoders.workers.dev";
+  static const String baseUrl2= "https://movies-api.nomadcoders.workers.dev/movie?id=";
   static const String popular="popular";
   static const String onScreen="now-playing";
   static const String coming="coming-soon";
@@ -66,11 +67,10 @@ class ApiService{
   }
 
   static Future<MovieDetailModel> getDetail(String id) async{
-    final url=Uri.parse("$baseUrl/$id");
+    final url=Uri.parse("$baseUrl2$id");
     final response= await http.get(url);
     if(response.statusCode ==200){
       final movie=jsonDecode(response.body);
-      MovieDetailModel.fromJson(movie);
       return MovieDetailModel.fromJson(movie);
     }
     throw Error();
