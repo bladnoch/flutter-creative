@@ -52,7 +52,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       BoxShadow(
                           blurRadius:5,
                           offset: Offset(1,1),
-                          color: Colors.black.withOpacity(0.2)
+                          color: Colors.black.withOpacity(0.4)
                       )
                     ]
                 ),
