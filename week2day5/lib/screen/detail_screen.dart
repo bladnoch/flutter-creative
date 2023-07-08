@@ -22,29 +22,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
   late Future<MovieDetailModel> movie;
 
-  void poseter(){
-    FutureBuilder(
-        future: movie,
-        builder: (context , snapshot){
-          if(snapshot.hasData){
-            snapshot.data!.poster_path;
-            return Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    snapshot.data!.poster_path,
-                  ),
-                ),
-              ),
-            );
-          }
-          return Container(
-          );
-          },
-    );
-  }
-
-
   @override
   void initState() {
     super.initState();
