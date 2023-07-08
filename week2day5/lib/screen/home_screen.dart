@@ -20,20 +20,11 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Text("",
-        style: TextStyle(
-          fontSize: 20,
-        ),
-        ),
-      ),
       body:
       Column(
         children: [
 
+          SizedBox(height: 140,),
           ///Text: popular movie
           Flexible(
             flex: 3,

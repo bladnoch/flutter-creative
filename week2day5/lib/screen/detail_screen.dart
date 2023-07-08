@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:week2day5/screen/home_screen.dart';
 import 'package:week2day5/services/api_service.dart';
 
 import '../models/movie_detail_model.dart';
@@ -20,7 +21,6 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
 
   late Future<MovieDetailModel> movie;
-  late String moviePoster;
 
   void poseter(){
     FutureBuilder(
@@ -54,24 +54,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
 
-
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        title: Container(
-          alignment: Alignment.centerLeft,
-          child: Text("Back to list",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700
-            ),
-          ),
-        ),
-      ),
       body: FutureBuilder(
         future: movie,
         builder: (context , snapshot){
@@ -101,9 +84,35 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: Column(
                     children: [
 
+                      SizedBox(height: 36,),
+
+                      ///back to list
+                      Flexible(
+                        flex: 1,
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => HomeScreen() ),);
+                            },
+                            child: Container(
+                              alignment: Alignment.topLeft,
+                              child: Row(
+                                children: [
+                                  Icon(Icons.arrow_back_ios, color: Colors.white, size: 18,),
+                                  Text("back to list",style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                    fontSize:20,
+
+                                  ),),
+                                ],
+                              ),
+                            ),
+                          ),),
+
                       ///Title
                       Flexible(
-                        flex: 7,
+                        flex: 6,
                         child:Container(
                           alignment: Alignment.bottomLeft,
                           child: FutureBuilder(
@@ -136,7 +145,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               if(snapshot.hasData){
                                 return Text("${snapshot.data!.vote_average} / 10",
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.6),
+                                    color: Colors.white.withOpacity(0.8),
                                   ),
                                 );
                               }
@@ -159,7 +168,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               if(snapshot.hasData){
                                 return Text("${snapshot.data!.runtime}min  |  ${snapshot.data!.genres}",
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.6),
+                                    color: Colors.white.withOpacity(0.8),
                                   ),
                                 );
                               }
@@ -187,26 +196,29 @@ class _DetailScreenState extends State<DetailScreen> {
 
                       ///Storyline API
                       Flexible(
-                        flex: 7,
-                        child:Container(
-                            alignment: Alignment.topLeft,
-                            child: FutureBuilder(
-                              future: movie,
-                              builder: (context , snapshot){
-                                if(snapshot.hasData){
-                                  return Text(snapshot.data!.overview,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  );
-                                }
-                                return Text("please...");
-                              },
-                            )
+                        flex: 6,
+                        child:Padding(
+                          padding: const EdgeInsets.only(right: 30),
+                          child: Container(
+                              alignment: Alignment.topLeft,
+                              child: FutureBuilder(
+                                future: movie,
+                                builder: (context , snapshot){
+                                  if(snapshot.hasData){
+                                    return Text(snapshot.data!.overview,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    );
+                                  }
+                                  return Text("please...");
+                                },
+                              )
 
 
+                          ),
                         ),
                       ),
                       Container(
@@ -219,17 +231,30 @@ class _DetailScreenState extends State<DetailScreen> {
                             boxShadow:[
                               BoxShadow(
                                   blurRadius:5,
-                                  offset: Offset(1,1),
-                                  color: Colors.black.withOpacity(0.2)
+                                  offset: Offset(2,2),
+                                  color: Colors.black.withOpacity(0.4)
                               )
                             ]
                         ),
                         child: Center(
-                          child: Text(
-                            "Buy ticket",style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 16,
-                          ),),
+                          child: GestureDetector(
+                            onTap: (){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Center(
+                                  child: Text(
+                                    "ticket issued",style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),),
+                                ),),
+                              );
+                            },
+                            child: Text(
+                              "Buy ticket",style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 16,
+                            ),),
+                          ),
                         ),
                       ),
                       SizedBox(height: 60,),
