@@ -4,6 +4,27 @@
 - UI design challenge
 - Pomodoro timer with extra functions
 
+<h2>7/8/2023</h2>
+
+- 결과 : https://imgur.com/a/mQ8Tq5h
+- 화면 구성 : home screen, detail screen
+
+- home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력
+  - popular movies(인기) : https://movies-api.nomadcoders.workers.dev/popular
+  - now on cinemas(상영중) : https://movies-api.nomadcoders.workers.dev/now-playing
+  - coming soon(개봉예정) : https://movies-api.nomadcoders.workers.dev/coming-soon
+ 
+- detail screen : 탭한 영화의 디테일을 화면에 출력
+- home_screen을 통해 id를 받아서 디테일 api를 사용
+  - 뒷 배경화면으로 포스터 출력
+  - 타이틀
+  - 평점
+  - 상영시간
+  - 장르
+  - 스토리라인 : api를 통한 스토리라인 출력
+  - 구매버튼: 구매버튼을 누르면 "ticket issued" 메시지 출력
+
+
 
 <h2>7/7/2023</h2>
 
