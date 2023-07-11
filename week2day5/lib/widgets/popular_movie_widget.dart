@@ -23,7 +23,7 @@ class PopularMovie extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 370,
+            width: 340,
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

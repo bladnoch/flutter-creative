@@ -24,7 +24,10 @@ class HomeScreen extends StatelessWidget {
       Column(
         children: [
 
-          SizedBox(height: 140,),
+          Flexible(
+            flex: 5,
+            child: Container(),),
+
           ///Text: popular movie
           Flexible(
             flex: 3,
