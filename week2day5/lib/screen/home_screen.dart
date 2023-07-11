@@ -146,9 +146,6 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              Flexible(
-                flex: 3,
-                child: Container(),),
             ],
           ),
         ),
