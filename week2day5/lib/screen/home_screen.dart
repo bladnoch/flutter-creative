@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
       SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: 1000,
+          height: 1100,
           child: Column(
             children: [
 
@@ -146,6 +146,9 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
+              Flexible(
+                flex: 3,
+                child: Container(),),
             ],
           ),
         ),

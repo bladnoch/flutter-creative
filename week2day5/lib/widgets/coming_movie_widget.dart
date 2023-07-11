@@ -42,7 +42,7 @@ class ComingMovie extends StatelessWidget {
             width: 170,
             child: Center(
               child: Text(title,
-                overflow: TextOverflow.ellipsis,
+                // overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
