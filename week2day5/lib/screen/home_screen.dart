@@ -24,13 +24,13 @@ class HomeScreen extends StatelessWidget {
       SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: 1100,
+          height: 1000,
           child: Column(
             children: [
 
               ///empty space on top
               Flexible(
-                flex: 15,
+                flex: 12,
                 child: Container(),),
 
               ///Text: popular movie
