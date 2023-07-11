@@ -178,20 +178,23 @@ class _DetailScreenState extends State<DetailScreen> {
                           padding: const EdgeInsets.only(right: 30),
                           child: Container(
                               alignment: Alignment.topLeft,
-                              child: FutureBuilder(
-                                future: movie,
-                                builder: (context , snapshot){
-                                  if(snapshot.hasData){
-                                    return Text(snapshot.data!.overview,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    );
-                                  }
-                                  return Text("please...");
-                                },
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.vertical,
+                                child: FutureBuilder(
+                                  future: movie,
+                                  builder: (context , snapshot){
+                                    if(snapshot.hasData){
+                                      return Text(snapshot.data!.overview,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      );
+                                    }
+                                    return Text("please...");
+                                  },
+                                ),
                               )
 
 

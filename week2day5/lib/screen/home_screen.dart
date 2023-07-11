@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         children: [
 
           Flexible(
-            flex: 5,
+            flex: 10,
             child: Container(),),
 
           ///Text: popular movie
