@@ -101,28 +101,33 @@ class MyApp extends StatelessWidget {
             SizedBox(height: 40,),
 
             ///cards
-            ThreeCards(
-                date: ["11","30","12","20"],
-                topic: ["DESIGN","MEETING"],
-                people: ["alex","helena","Jack",],
-                color:Colors.yellow[400],
-            ),
-            SizedBox(height: 10,),
+            Column(
+              children: [
+                ThreeCards(
+                    date: ["11","30","12","20"],
+                    topic: ["DESIGN","MEETING"],
+                    people: ["alex","helena","Jack",],
+                    color:Colors.yellow[400],
+                ),
+                SizedBox(height: 10,),
 
-            ThreeCards(
-                date: ["12","35","14","10"],
-                topic: ["daily","project"],
-                people: ["me","richard","ciry","+4"],
-                color:Colors.deepPurple[400],
-            ),
-            SizedBox(height: 10,),
+                ThreeCards(
+                  date: ["12","35","14","10"],
+                  topic: ["daily","project"],
+                  people: ["me","richard","ciry","+4"],
+                  color:Colors.deepPurple[400],
+                ),
+                SizedBox(height: 50,),
 
-            ThreeCards(
-              date: ["15","00","16","30"],
-              topic: ["weekly","planning"],
-              people: ["den","nana","mark",],
-              color:Colors.lightGreen,
+                ThreeCards(
+                  date: ["15","00","16","30"],
+                  topic: ["weekly","planning"],
+                  people: ["den","nana","mark",],
+                  color:Colors.lightGreen,
+                ),
+              ],
             ),
+
           ],
         ),
       ),
