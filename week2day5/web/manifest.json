@@ -1,3 +1,4 @@
+
 {
     "name": "week2day5",
     "short_name": "week2day5",
@@ -31,5 +32,6 @@
             "type": "image/png",
             "purpose": "maskable"
         }
+
     ]
 }
