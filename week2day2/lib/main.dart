@@ -117,7 +117,7 @@ class MyApp extends StatelessWidget {
                   people: ["me","richard","ciry","+4"],
                   color:Colors.deepPurple[400],
                 ),
-                SizedBox(height: 50,),
+                SizedBox(height: 10,),
 
                 ThreeCards(
                   date: ["15","00","16","30"],
