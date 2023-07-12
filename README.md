@@ -6,6 +6,7 @@
 - Display movies on the home screen, and shows details of a tapped movie (7/7-8)
 
 <h2>7/12/2023</h2>
+
 - 홈스크린 길이 업데이트
 - 홈스크린 SingleScrollView 추가로 위아래로 드레그 가능하게 업데이드 
 
