@@ -3,7 +3,7 @@
 - 2 weeks challenge of dart and flutter
 - UI design challenge (7/4)
 - Pomodoro timer with extra functions (7/6)
-- Display movies on the home screen, and shows details of a tapped movie (7/7-8)
+- Display movies on the home screen, and shows details of a tapped movie (7/7~9)
 
 <h2>7/12/2023</h2>
 
