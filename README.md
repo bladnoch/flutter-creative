@@ -8,8 +8,8 @@
 
 <h2>7/12/2023</h2>
 
-- 홈스크린 길이 업데이트
-- 홈스크린 SingleScrollView 추가로 위아래로 드레그 가능하게 업데이드 
+- Update home screen height(홈스크린 길이 업데이트)
+- Update home screen by adding SingleScrollView to enable dragging up and down.(홈스크린 SingleScrollView 추가로 위아래로 드레그 가능하게 업데이드) 
 
 <h2>7/8/2023</h2>
 
@@ -17,7 +17,7 @@
 - screens(화면 구성) : home screen, detail screen
 - <img width="427" alt="스크린샷 2023-07-08 오후 8 49 43" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/29ca363b-3c14-4f18-8fc1-f49b2b541407"> <img width="420" alt="스크린샷 2023-07-08 오후 8 49 52" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bcb2d913-fccb-4f3d-aa22-7a33e07afefc">
 
-- home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력(displays popular, on screen and coming movies with API)
+- home screen : Display popular, currently showing, and upcoming movies on the screen through their respective APIs.(인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력)
   - popular movies(인기) : https://movies-api.nomadcoders.workers.dev/popular
   - now on cinemas(상영중) : https://movies-api.nomadcoders.workers.dev/now-playing
   - coming soon(개봉예정) : https://movies-api.nomadcoders.workers.dev/coming-soon
