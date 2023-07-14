@@ -15,7 +15,7 @@
 
 - result sample(결과) : https://imgur.com/a/mQ8Tq5h
 - screens(화면 구성) : home screen, detail screen
-- <img width="427" alt="스크린샷 2023-07-08 오후 8 49 43" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/29ca363b-3c14-4f18-8fc1-f49b2b541407">   <img width="420" alt="스크린샷 2023-07-08 오후 8 49 52" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bcb2d913-fccb-4f3d-aa22-7a33e07afefc">
+- <img width="427" alt="스크린샷 2023-07-08 오후 8 49 43" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/29ca363b-3c14-4f18-8fc1-f49b2b541407"> <img width="420" alt="스크린샷 2023-07-08 오후 8 49 52" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bcb2d913-fccb-4f3d-aa22-7a33e07afefc">
 
 - home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력(displays popular, on screen and coming movies with API)
   - popular movies(인기) : https://movies-api.nomadcoders.workers.dev/popular
