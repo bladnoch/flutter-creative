@@ -13,26 +13,25 @@
 
 <h2>7/8/2023</h2>
 
-- 결과 : https://imgur.com/a/mQ8Tq5h
-- 화면 구성 : home screen, detail screen
+- result sample(결과) : https://imgur.com/a/mQ8Tq5h
+- screens(화면 구성) : home screen, detail screen
 - <img width="427" alt="스크린샷 2023-07-08 오후 8 49 43" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/29ca363b-3c14-4f18-8fc1-f49b2b541407">   <img width="420" alt="스크린샷 2023-07-08 오후 8 49 52" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bcb2d913-fccb-4f3d-aa22-7a33e07afefc">
 
-- home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력
+- home screen : 인기있는, 상영중인, 개봉예정인 영화를 각각의 api를 통해 화면에 출력(displays popular, on screen and coming movies with API)
   - popular movies(인기) : https://movies-api.nomadcoders.workers.dev/popular
   - now on cinemas(상영중) : https://movies-api.nomadcoders.workers.dev/now-playing
   - coming soon(개봉예정) : https://movies-api.nomadcoders.workers.dev/coming-soon
  
-- detail screen : 탭한 영화의 디테일을 화면에 출력
-- home_screen을 통해 id를 받아서 디테일 api를 사용
+- detail screen : details of taped movie(탭한 영화의 디테일을 화면에 출력)
+- get id from home_screen for using detail api(home_screen을 통해 id를 받아서 디테일 api를 사용)
 -  https://movies-api.nomadcoders.workers.dev/movie?id=${id}
-  - 뒷 배경화면으로 포스터 출력
-  - 타이틀
-  - 평점
-  - 상영시간
-  - 장르
-  - 스토리라인 : api를 통한 스토리라인 출력
-  - 구매버튼: 구매버튼을 누르면 "ticket issued" 메시지 출력
-
+  - useing post as a background(뒷 배경화면으로 포스터 출력) : poster_path
+  - title(타이틀) : title
+  - vote_average(평점) : vote_average
+  - runtime(상영시간) : runtime
+  - genre(장르) : genre_ids
+  - storyline by api(api를 통한 스토리라인 출력) : overview
+  - ticket issue button pops "ticket issued" massege(구매버튼을 누르면 "ticket issued" 메시지 출력)
 
 
 <h2>7/7/2023</h2>
@@ -78,7 +77,7 @@
         },
   }</code></pre>
 
-- 상영중인 영화 API :  https://movies-api.nomadcoders.workers.dev/now-playing
+- now on cinema api(상영중인 영화 API) :  https://movies-api.nomadcoders.workers.dev/now-playing
 <pre><code>
 {
     "dates": {
@@ -109,7 +108,7 @@
         },
 </code></pre>
 
- - 상영예정 영화 API :  https://movies-api.nomadcoders.workers.dev/coming-soon
+ - coming movie api(상영예정 영화 API) :  https://movies-api.nomadcoders.workers.dev/coming-soon
 <pre><code>
 {
     "dates": {
@@ -142,10 +141,9 @@
 
 - 영화에 대한 세부 정보
 - https://movies-api.nomadcoders.workers.dev/movie?id=1
-- id= 를 API에 저장된 아이디로 변환시 세부정보 접근
-- 접근시 요소
-- 포스터, 제목, 등급, 개요, 장르
-- poster_path, original_title, vote_average, overview, genre_ids
+- attach value of id next to {id=} to access a movie detail(id= 를 API에 저장된 아이디로 변환시 세부정보 접근)
+- material(요소) : poster,title, title, vote_average, overview, genre, runtime(포스터, 제목, 평점, 개요, 장르, 런타임) 
+- keys : poster_path, title, vote_average, overview, genre_ids, runtime
 <pre><code>
 {
     "adult": false,
@@ -234,8 +232,8 @@
     - 유저가 4개의 사이클(1라운드)를 완료한 횟수를 카운트해야 합니다.
     - 각 라운드가 끝나면 사용자가 5분간 휴식을 취할 수 있어야 합니다.
   
-- 버튼별 클릭시 버튼색 반전으로 선택된 버튼 확인 가능
-- 결과 : https://imgur.com/a/VFubQtW
+- reverse the taped btn's back and foreground color(버튼별 클릭시 버튼색 반전으로 선택된 버튼 확인 가능)
+- result sample(결과) : https://imgur.com/a/VFubQtW
 - <img width="426" alt="스크린샷 2023-07-07 오전 12 09 55" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/1cd198e3-4212-473d-bdd0-2f7f81e0feef">
 
 <h2>7/5/2023</h2>
@@ -251,17 +249,17 @@
 
 <h2>7/3/2023</h2>
 
-- flutter 초기 세팅
-- 모든 flutter 요소는 material에 속해있다.
-- widget들의 조합으로 어플의 모든 기능이 구현된다.
+- essential settings of flutter(flutter 초기 세팅)
+- all flutter materials are inhered in material(모든 flutter 요소는 material에 속해있다.)
+- combination of widgets are how apps are creating in flutter(widget들의 조합으로 어플의 모든 기능이 구현된다.)
 
 
 
 
 <h2>6/30/2023</h2>
 
-- 프로젝트 이름: day_one
-- 해당 파일: DayFive.dart
+- project name(프로젝트 이름): day_one
+- current file(해당 파일): DayFive.dart
 - First code challenge
 - Challenge goals: Using everything we learned, make a Dictionary class with the following methods:
 
@@ -271,13 +269,13 @@
 
 - Student std=new Student();
 - var std=Student;
-- extends 대신 with로 변수나 메소드 사용 가능
-- Player.info()형식으로 생성자 사용, 초기화 가능
+- replace with instead of extends to using variables and methods(extends 대신 with로 변수나 메소드 사용 가능)
+- Player.info() is format of constructor(Player.info()형식으로 생성자 사용, 초기화 가능)
 
 <h2>6/28/2023</h2>
 
-- named function은 parameter에 중괄호를 쳐준다 그럴경우 순서에 상관없이 map처럼 파라미터 이름과 value를 추가한다.
-  생성자처럼 번수를 주지 않았을 경우에도 default로 값을 지정해줄 수 있다.
+- Named functions use curly braces for parameters. In this case, the parameter names and values are added like a map, regardless of the order.(named function은 parameter에 중괄호를 쳐준다 그럴경우 순서에 상관없이 map처럼 파라미터 이름과 value를 추가한다.) 
+- Even when not assigning values like in a constructor, you can set a default value. (생성자처럼 번수를 주지 않았을 경우에도 default로 값을 지정해줄 수 있다.)
 - left ?? right. 
 - (left==!null)? left : right
  
