@@ -9,7 +9,7 @@
 <h2>7/17/2023</h2>
 
 - nomad coders 플러터 4기 졸업
-- 우수 졸업생으로 이미지, 영상 졸업작품으로 업로드
+- 우수 졸업생, 이미지, 영상 졸업작품 선정 🥳🥳🥳🥳🥳🥳🥳
 - <img width="552" alt="스크린샷 2023-07-17 오후 10 57 44" src="https://github.com/bladnoch/flutter-challenge/assets/112937442/bed1d6b0-cdd6-4678-bf85-85a489ea4b18">
 - https://nomadcoders.co/community/thread/7838
 
