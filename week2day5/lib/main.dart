@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:week2day5/screen/home_screen.dart';
 
+/// main.dart
+/// @author doungukkim
+/// @since 7/7/2023
+/// @version v0.0.1
+
 void main() {
   runApp(const MyApp());
 }
