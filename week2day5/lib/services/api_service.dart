@@ -7,6 +7,11 @@ import 'package:week2day5/models/popular_movie_model.dart';
 
 import '../models/movie_detail_model.dart';
 
+/// api_service.dart
+/// @author doungukkim
+/// @since 7/7/2023
+/// @version v0.0.1
+
 class ApiService{
   static const String baseUrl ="https://movies-api.nomadcoders.workers.dev";
   static const String baseUrl2= "https://movies-api.nomadcoders.workers.dev/movie?id=";

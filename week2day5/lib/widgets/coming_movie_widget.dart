@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:week2day5/screen/detail_screen.dart';
 
+/// comming_movie_widget.dart
+/// @author doungukkim
+/// @since 7/7/2023
+/// @version v0.0.1
+
 class ComingMovie extends StatelessWidget {
   final String image, title, id;
 

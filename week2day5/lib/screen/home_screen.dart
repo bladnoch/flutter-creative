@@ -8,6 +8,11 @@ import '../models/coming_movie_model.dart';
 import '../models/on_screen_movie_model.dart';
 import '../models/popular_movie_model.dart';
 
+/// home_screen.dart
+/// @author doungukkim
+/// @since 7/7/2023
+/// @version v0.0.1
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 

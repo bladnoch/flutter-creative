@@ -4,6 +4,11 @@ import 'package:week2day5/services/api_service.dart';
 
 import '../models/movie_detail_model.dart';
 
+/// detail_screen.dart
+/// @author doungukkim
+/// @since 7/8/2023
+/// @version v0.0.1
+
 class DetailScreen extends StatefulWidget {
   final String image, title, id;
 
